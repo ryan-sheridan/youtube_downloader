@@ -6,8 +6,7 @@ This is a barebones YouTube downloader built on Python, HTML, CSS, and Javascrip
 
 Clone the Repo and Dive into the sub directory.
 
-`git clone https://github.com/ryan-sheridan/youtube_downloader` **
-**
+`git clone https://github.com/ryan-sheridan/youtube_downloader` \
 `cd youtube_downloader`**
 **
 
