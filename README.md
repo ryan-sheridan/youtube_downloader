@@ -1,1 +1,2 @@
 # youtube_downloader
+this is a youtube downloader fully made with python flask and raw html, css and javascript. this is a simple project of mine to try get my head around front and backend webdevelopment. I found this to be a good project to start off with since I feel alot of youtube users will have a use for this, including me at times. This project will stay completely open source as I build it up day by day. Theres a few more things that need to be checked off in regards to mp4 downloading, and sending files to the user as attachments.
