@@ -7,19 +7,14 @@ This is a barebones YouTube downloader built on Python, HTML, CSS, and Javascrip
 Clone the Repo and Dive into the sub directory.
 
 `git clone https://github.com/ryan-sheridan/youtube_downloader` \
-`cd youtube_downloader`**
-**
+`cd youtube_downloader`
 
 Create and activate a Python Virtual Enviroment.
 
-`python3 -m venv venv`**
-**
-`. venv/bin/activate`**
-**
+`python3 -m venv venv`\
+`. venv/bin/activate`
 
 Setup enviroment variables and run the app.
 
-`export FLASK_APP=main.py`**
-**
-`flask run`**
-**
+`export FLASK_APP=main.py`\
+`flask run`
