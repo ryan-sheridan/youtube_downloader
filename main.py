@@ -52,7 +52,7 @@ def index():
     return render_template('index.html')
 
 @app.route("/youtubedl/<v_id>/<v_type>")
-def rd_download(v_id, v_type):
+def rd_download(v_id, v_type):9
 	# if redirect to download page, get video id and type and call download function
 	title, filename, thumbnail_url = download_video(v_id, v_type)
 	filenames.append(filename)
@@ -71,3 +71,13 @@ def download_file(filename):
 
 if __name__ == '__main__':
 	app.run()
+
+
+
+
+
+
+
+
+
+########################################################################################################################################################################################################################################################################################################################################################################################################################################################
