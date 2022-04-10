@@ -13,8 +13,10 @@
   </div> 
   	<div class="center">
   		<h1>{{ title }}</h1>
-      <img width='50%' height='50%' src='{{ thumbnail_url }}'><br>
-      <a href="/d/{{ filename }}" type="submit" value="submit">click me </a>
+      <img width='70%' height='70%' style='display: block; margin-left: auto; margin-right: auto;' src='{{ thumbnail_url }}'><br>
+      <p align="center">
+        <a class="downloadLink" href="/d/{{ filename }}" download="{{ filename }}">click me </a>
+      </p>
   	</div>
     <script src="script.js"></script>
   </body>

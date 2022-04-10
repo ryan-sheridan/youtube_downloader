@@ -1,3 +1,17 @@
+.downloadLink {
+	background-color: #4CAF50;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  display: inline-block;
+  width: 70%;
+  border-radius: 4px;
+}
+
+.downloadLink:hover {
+	background-color: #45a049;
+}
+
 body {
 	background-color: #1E1F21;
 	color: #ffffff;
@@ -34,7 +48,7 @@ input[type=submit] {
 	margin: auto;
 	width: 60%;
 	padding-top: 10px;
- }
+}
 
 .navBar {
   overflow: hidden;

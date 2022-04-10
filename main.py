@@ -5,31 +5,46 @@ import time
 import hashlib
 
 app = Flask(__name__)
+filenames = []
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+def clean_dl_multiple(filenames):
+	for i in range(len(filenames)):
+		os.remove('dl/{}'.format(filenames[i]))
+
+def clean_dl(filename):
+	os.remove('dl/{}'.format(filename))
+	dir_name = "dl/"
+	t = os.listdir(dir_name)
+	for item in t:
+	    if item.endswith(".js"):
+	        os.remove(os.path.join(dir_name, item))
 
 def download_video(v_id, v_type):
 	from pytube import YouTube
+	from pydub import AudioSegment
 
-	onlyAudio = False # check what file extension the end user wants
-	if (v_type == 'mp3'):
-		onlyAudio = True
-	if (v_type == 'mp4'):
-		onlyAudio == False
+	if v_type == 'mp4':
+		yt = YouTube('http://youtube.com/watch?v={}'.format(v_id))
+		video = yt.streams.get_highest_resolution().download('dl/')
+	if v_type == 'mp3':
+		yt = YouTube('http://youtube.com/watch?v={}'.format(v_id))
+		video = yt.streams.filter(only_audio=True).first().download('dl/')
 
-	# this is the temp filename base, used for searching for the downloaded file later.
 	timestamp = str(time.time())
+
 	hash_object = hashlib.md5(timestamp.encode())
-	md5timestamp = hash_object.hexdigest()
+	hashedts = hash_object.hexdigest()[0:7]
+	filename = '{}.{}'.format(hashedts, v_type)
 
-	# download the file into the destination path (/dl)
-	yt = YouTube('https://www.youtube.com/watch?v=' + v_id)
-	video = yt.streams.filter(only_audio=onlyAudio).first()
-	destination = 'dl'
-	ext = '.' + v_type
-	out_file = video.download(output_path=destination, filename=md5timestamp + ext)
+	destinationFilePath = 'dl/' + filename
+	defaultFilePath = 'dl/' + yt.streams.get_highest_resolution().default_filename
+	os.rename(defaultFilePath, destinationFilePath)
 
-	filename = md5timestamp + ext
 	return yt.title, filename, yt.thumbnail_url
-
 
 @app.route("/")
 def index():
@@ -40,13 +55,19 @@ def index():
 def rd_download(v_id, v_type):
 	# if redirect to download page, get video id and type and call download function
 	title, filename, thumbnail_url = download_video(v_id, v_type)
+	filenames.append(filename)
+	print(filenames)
 	return render_template('youtubedl.html', filename=filename, title=title, v_type=v_type, thumbnail_url=thumbnail_url)
 
 @app.route("/d/<filename>")
 def download_file(filename):
-	# this is kind of broken right now, mp4s dont work.
-	path = 'dl/' + filename
-	return send_file(path)
+	filenames.remove(filename)
+	try:
+		path = 'dl/' + filename
+		return send_file(path)
+	finally:
+		clean_dl(filename)
+		clean_dl_multiple(filenames)
 
 if __name__ == '__main__':
 	app.run()
