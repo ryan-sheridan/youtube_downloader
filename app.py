@@ -25,7 +25,6 @@ def clean_dl(filename):
 
 def download_video(v_id, v_type):
 	from pytube import YouTube
-	from pydub import AudioSegment
 
 	if v_type == 'mp4':
 		yt = YouTube('http://youtube.com/watch?v={}'.format(v_id))
