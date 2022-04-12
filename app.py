@@ -5,15 +5,10 @@ import time
 import hashlib
 
 app = Flask(__name__)
-filenames = []
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
-
-def clean_dl_multiple(filenames):
-	for i in range(len(filenames)):
-		os.remove('dl/{}'.format(filenames[i]))
 
 def clean_dl(filename):
 	os.remove('dl/{}'.format(filename))
@@ -46,9 +41,17 @@ def download_video(v_id, v_type):
 	return yt.title, filename, yt.thumbnail_url
 
 @app.route("/")
-def index():
+def index(warningMessage=0):
 	# return index if no subdir is called
-    return render_template('index.html')
+	if warningMessage == 0:
+		warningMessage = ''
+	else:
+		warningMessage = 'There was an error with the link you entered, please check formatting and try again.'
+	return render_template('index.html', warningMessage=warningMessage)
+
+@app.route("/youtubedl//<v_type>")
+def throwNoLinkError(v_type):
+	return index(warningMessage=1)
 
 @app.route("/youtubedl/<v_id>/<v_type>")
 def rd_download(v_id, v_type):
@@ -66,7 +69,6 @@ def download_file(filename):
 		return send_file(path)
 	finally:
 		clean_dl(filename)
-		clean_dl_multiple(filenames)
 
 if __name__ == '__main__':
 	app.run()

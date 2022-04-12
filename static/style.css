@@ -1,11 +1,24 @@
 .downloadLink {
-	background-color: #4CAF50;
+  background-color: #4CAF50;
   color: white;
-  padding: 14px 25px;
   text-align: center;
   display: inline-block;
-  width: 70%;
+  width: 100%;
   border-radius: 4px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+p {
+	color: #ffffff;
+	font-family: 'Fira Code', monospace;
+	font-size: 80% !important;
+}
+
+h1 {
+	color: #ffffff;
+	font-family: 'Fira Code', monospace;
+	font-size: 100% !important;
 }
 
 .downloadLink:hover {
@@ -46,7 +59,7 @@ input[type=submit] {
 
 .center {
 	margin: auto;
-	width: 60%;
+	width: 90%;
 	padding-top: 10px;
 }
 

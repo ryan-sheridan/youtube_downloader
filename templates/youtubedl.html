@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <title>youtubedl</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&amp;display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
     <a href="/">YouTube Downloader</a>
   </div> 
   	<div class="center">
-  		<h1>{{ title }}</h1>
+  		<h1 class="downloadPage">{{ title }}</h1>
       <img width='70%' height='70%' style='display: block; margin-left: auto; margin-right: auto;' src='{{ thumbnail_url }}'><br>
       <p align="center">
         <a class="downloadLink" href="/d/{{ filename }}" download="{{ filename }}">click me </a>

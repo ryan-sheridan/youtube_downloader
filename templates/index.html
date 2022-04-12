@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
     <title>youtubedl</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
     <script src="{{url_for('static', filename='script.js')}}"></script>
@@ -11,13 +11,15 @@
   <body>
   	<div class="center">
   		<h1>Youtube Downloader</h1>
-  		<p>this page is a work in progress, the finished product will be able to download lots of information from a singular youtube link, including youtube to a mp3 file, mp4, grab the thumbnail at full quality, and scrape all comments to a file for download.<br></p><p style='color: red;'>note: mp4s dont work currently, im working on it.</p>
+  		<p>this page is a work in progress, the finished product will be able to download lots of information from a singular youtube link, including youtube to a mp3 file, mp4, grab the thumbnail at full quality, and scrape all comments to a file for download.<br></p><p style='color: red;'>{{ warningMessage }}</p>
   		<input id="videoidbox" type="text" placeholder="please input a video id, e.g. : dQw4w9WgXcQ"></input>
       <select id="videotype">
                   <option value="mp3">mp3</option>
                   <option value="mp4">mp4</option>
       </select>
-  		<input onclick="redirectToSite()" type="submit" value="submit">
+  		<p align="center">
+        <a class="downloadLink" onclick="redirectToSite()">Go To Download Page</a>
+      </p>
   	</div>
   </body>
 </html>
