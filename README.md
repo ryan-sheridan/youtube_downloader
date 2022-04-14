@@ -1,6 +1,6 @@
 # YouTube Downloader
 
-barebones web-based youtube downloader built on python, html, css and js. this project was mainly built around pytube and flask and there is a clone and setup tutorial below. this website is also hosted on youtubeddd.com for testing purposes. more stuff will be added such as a way to get from youtube to my site and automatically download a video. this should be pretty easy in theory if the user just wanted to put ddd infront of the youtube link. the download folder also needs to be fixed as users can download an unlimited amount of videos to my server. banning is another thing that i need to include as i have imported a working fingerprinting library so that will be used to ban users.
+This is a barebones YouTube downloader built on Python, HTML, CSS, and Javascript, It is built upon Flask and this can be ran upon any webserver. This is a barebones project of mine to try get my head around front and back-end web development, more support will be added to the backend regarding video to audio conversion with the ffmpeg module. The project will stay open source as I build it up day by day, feel free to clone and rebrand this. Theres a few more things that need to be checked off in regards to mp4 downloading, sending files back to the user, and better mobile support.
 
 ## Setup
 
@@ -16,5 +16,5 @@ Create and activate a Python Virtual Enviroment.
 
 Setup enviroment variables and run the app.
 
-`export FLASK_APP=app.py`\
+`export FLASK_APP=main.py`\
 `flask run`

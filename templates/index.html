@@ -15,14 +15,14 @@
       <h1 onclick='return returnHome()'>Youtube Downloader</h1>
     </div>
   	<div class="center">
-  		<p>welcome to youtube downloader, this is a project in the making for a short while that im happy to release. this has been built on <a style="color: #006600;" href="https://github.com/pytube/pytube">pytube</a> and <a style="color: #006600;" href="https://flask.palletsprojects.com/en/2.1.x/">flask.</a> the project is also open-sourced so feel free to clone the <a style="color: #006600;" href="https://github.com/ryan-sheridan/youtube_downloader">repo</a> use the code. this site is still a work in progress so if there is any issues feel free to open a request on github or email me at 0xryann@protonmail.com</p><p style='color: red;' id='warningElement'></p>
+  		<p>welcome to youtube downloader, this is a project in the making for a short while that im happy to release. this has been built on <a class='links' style="color: #006600;" href="https://github.com/pytube/pytube">pytube</a> and <a class='links' style="color: #006600;" href="https://flask.palletsprojects.com/en/2.1.x/">flask.</a> the project is also open-sourced so feel free to clone the <a class='links' style="color: #006600;" href="https://github.com/ryan-sheridan/youtube_downloader">repo</a> use the code. this site is still a work in progress so if there is any issues feel free to open a request on github or email me at 0xryann@protonmail.com</p><p style='color: red;' id='warningElement'></p>
   		<input class="input" id="videoidbox" type="text" placeholder="please input a video id, e.g. : dQw4w9WgXcQ"></input>
       <select class="select" id="videotype">
                   <option value="mp3">mp3</option>
                   <option value="mp4">mp4</option>
       </select>
   		<p align="center">
-        <a class="downloadLink" onclick="redirectToSite()">Go To Download Page</a>
+        <a class="downloadLink" onclick="markInactive(0)">go to download page</a>
       </p>
   	</div>
   </body>
