@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-    <title>youtubedl</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/2.1.5/fingerprint2.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>YouTube DL</title>
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
     <script src="{{url_for('static', filename='script.js')}}"></script>
     <link href="https://fonts.googleapis.com/css?family=Fira+Code:400,600&amp;display=swap" rel="stylesheet">
   </head>
   <body>
+    <div class="h1top">
+      <h1 onclick='return returnHome()'>Youtube Downloader</h1>
+    </div>
   	<div class="center">
-  		<h1>Youtube Downloader</h1>
-  		<p>this page is a work in progress, the finished product will be able to download lots of information from a singular youtube link, including youtube to a mp3 file, mp4, grab the thumbnail at full quality, and scrape all comments to a file for download.<br></p><p style='color: red;'>{{ warningMessage }}</p>
-  		<input id="videoidbox" type="text" placeholder="please input a video id, e.g. : dQw4w9WgXcQ"></input>
-      <select id="videotype">
+  		<p>welcome to youtube downloader, this is a project in the making for a short while that im happy to release. this has been built on <a style="color: #006600;" href="https://github.com/pytube/pytube">pytube</a> and <a style="color: #006600;" href="https://flask.palletsprojects.com/en/2.1.x/">flask.</a> the project is also open-sourced so feel free to clone the <a style="color: #006600;" href="https://github.com/ryan-sheridan/youtube_downloader">repo</a> use the code. this site is still a work in progress so if there is any issues feel free to open a request on github or email me at 0xryann@protonmail.com</p><p style='color: red;' id='warningElement'></p>
+  		<input class="input" id="videoidbox" type="text" placeholder="please input a video id, e.g. : dQw4w9WgXcQ"></input>
+      <select class="select" id="videotype">
                   <option value="mp3">mp3</option>
                   <option value="mp4">mp4</option>
       </select>
@@ -22,4 +26,16 @@
       </p>
   	</div>
   </body>
+  <script>
+    if(screen.width >= 768){
+      const centerDivWidth = document.getElementsByClassName("center");
+      const centerDiv = centerDivWidth[0]
+      centerDiv.style.width = '60%'
+
+      const bgbOrig = document.getElementsByClassName("downloadLink");
+      const bgb = bgbOrig[0]
+      bgb.style.paddingTop = '1.4%'
+      bgb.style.paddingBottom = '1.4%'
+    }
+  </script>
 </html>

@@ -7,18 +7,36 @@
   border-radius: 4px;
   padding-top: 3%;
   padding-bottom: 3%;
+  font-size: 120%;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.input {
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+}
+
+.select {
+	box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 }
 
 p {
 	color: #ffffff;
 	font-family: 'Fira Code', monospace;
 	font-size: 80% !important;
+	text-align: center;
 }
 
 h1 {
 	color: #ffffff;
 	font-family: 'Fira Code', monospace;
-	font-size: 100% !important;
+	font-size: 140% !important;
+	text-align: center;
+}
+
+.h1top {
+	background-color: #121212;
+	overflow: hidden;
+	margin: 0;
 }
 
 .downloadLink:hover {
@@ -26,7 +44,7 @@ h1 {
 }
 
 body {
-	background-color: #1E1F21;
+	background-color: #303030;
 	color: #ffffff;
 	font-family: 'Fira Code', monospace;
 	margin: 0; 
@@ -69,7 +87,7 @@ input[type=submit] {
 }
 
 .navBar a {
-  float: left;
+  float: middle;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
