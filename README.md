@@ -6,7 +6,7 @@ A barebones youtube downloader site built on html, css, js, a pytube fork, and f
 
 I would like to add some sort of anti-spam mechanism that uses a js fingerprinting library so my server doesn't get backed up with bullshit, along with that, anti-botting or just being able to auto-ban people if my server detects something negative would be great.
 
-### Setup At Home
+## Setup At Home
 
 Clone the Repo and Dive into the sub directory.
 
