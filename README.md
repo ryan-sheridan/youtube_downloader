@@ -1,5 +1,8 @@
 # YouTube Downloader
 
+> [!WARNING]  
+> this was my first ever "working" project, I doubt this works anymore.
+
 A barebones youtube downloader site built on html, css, js, a pytube fork, and flask. This project can be built on top of and freely cloned for any sort of use. This won't be updated regularly, only the odd times when I feel like contributing.
 
 ## Future Planning
